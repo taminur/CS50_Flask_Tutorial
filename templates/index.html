@@ -1,16 +1,8 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <meta name="viewport" content="initial-scale=1, width=device-width">
-        <title>
-            HTML Form
-        </title>
-    </head>
-    <body>
-        <form action="/greet" method="get">
-            <input autocomplete="off" autofocus placeholder="Enter a name" name="name" type="text">
-            <button type="submit">Greet</button>
-        </form>
-    </body>
-</html>
+{% block body %}
+    <form action="/greet" method="get">
+        <input autocomplete="off" autofocus placeholder="Enter a name" name="name" type="text">
+        <button type="submit">Greet</button>
+    </form>
+{% endblock %}
