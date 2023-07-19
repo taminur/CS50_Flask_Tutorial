@@ -4,5 +4,8 @@ app = Flask(__name__) # __name__ refers to the name of the current file; this li
 
 @app.route("/")
 def index():
-    # return "hello world" # this will spit out no html file
-    return render_template("index.html")
+    if "name" in request.args:
+        name = request.args["name"]
+    else:
+        name = "world"
+    return render_template("index.html", placeholder=name) # browser address eg. local host/?name="Tamim"
